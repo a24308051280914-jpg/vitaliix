@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hospital Vitalix - Panel Principal</title>
+    <title>Hospital Vitalix - Inicio</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f6fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         header { display: flex; align-items: center; gap: 15px; background-color: #0056b3; color: white; padding: 15px 30px; position: fixed; top: 0; left: 0; right: 0; height: 40px; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -13,19 +13,21 @@
         .titulo-sidebar { color: #8a99a8; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; padding-left: 10px; margin-bottom: 5px; }
         nav a { color: #cbd5e1; text-decoration: none; padding: 12px 15px; font-weight: bold; border-radius: 6px; font-size: 14px; transition: all 0.2s ease; }
         nav a:hover { background-color: #34495e; color: white; padding-left: 20px; }
-        .activo { background-color: #0056b3; color: white; }
+        .activo { background-color: #0056b3; color: white; border: 1px solid #cbd5e1; }
         
-        /* Ajuste a una sola columna grande para la bienvenida del Index */
         main { flex: 1; padding: 30px; margin-left: 260px; margin-bottom: 60px; }
-        .tarjeta-bienvenida { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #0056b3; margin-bottom: 25px; }
+        .tarjeta-bienvenida { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #0056b3; margin-bottom: 30px; }
+        .tarjeta-bienvenida h2 { color: #0056b3; margin-top: 0; font-size: 28px; font-weight: bold; }
+        .tarjeta-bienvenida p { color: #4a5568; font-size: 15px; line-height: 1.6; margin-bottom: 25px; }
         
-        /* Grid de accesos rápidos a las colecciones */
-        .grid-accesos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
-        .tarjeta-acceso { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .tarjeta-acceso:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-color: #0056b3; }
-        .tarjeta-acceso h3 { margin: 10px 0 5px 0; color: #0056b3; font-size: 18px; }
-        .tarjeta-acceso p { margin: 0; color: #64748b; font-size: 13px; }
-        .icono-modulo { font-size: 32px; color: #17a2b8; }
+        .contenedor-mision { background-color: #f8fafc; border-left: 4px solid #0056b3; padding: 20px 25px; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+        .contenedor-mision h3 { color: #0056b3; margin-top: 0; margin-bottom: 12px; font-size: 18px; font-weight: bold; }
+        .contenedor-mision p { color: #4a5568; font-size: 14px; margin: 0; line-height: 1.5; }
+        
+        .seccion-especialidades h3 { color: #2c3e50; font-size: 20px; margin-top: 0; margin-bottom: 10px; }
+        .seccion-especialidades p { color: #64748b; font-size: 14px; margin-bottom: 15px; }
+        .contenedor-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag-especialidad { background-color: #e0f2fe; color: #0369a1; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; }
 
         footer { background: #1a252f; color: white; padding: 15px; text-align: center; position: fixed; bottom: 0; left: 0; right: 0; height: 30px; z-index: 1000; display: flex; justify-content: space-around; align-items: center; font-size: 13px; }
         footer p { margin: 0; }
@@ -51,55 +53,30 @@
         </nav>
         <main>
             <div class="tarjeta-bienvenida">
-                <h2 style="color: #0056b3; margin-top: 0; font-size: 26px;">Sistema de Gestión Hospitalaria</h2>
-                <p style="color: #4a5568; font-size: 15px; line-height: 1.6;">
-                    Bienvenido al panel de administración de <strong>Hospital Vitalix</strong>. Desde aquí puedes acceder de forma rápida al control, actualización y registro de las distintas colecciones de la base de datos del complejo médico.
-                </p>
-            </div>
+                <h2>Bienvenidos a Hospital Vitalix</h2>
+                <p>¡Hola! Te damos la bienvenida al sistema de administración del <strong>Hospital Vitalix</strong>. Este espacio está diseñado para gestionar de forma rápida y sencilla todo lo relacionado con nuestro centro médico, desde el control de los doctores hasta las citas de los pacientes.</p>
+                
+                <div class="contenedor-mision">
+                    <h3>Nuestra Misión</h3>
+                    <p>Cuidar la salud y el bienestar de todas las personas que nos visitan, ofreciendo una atención médica de calidad, amable y con la mejor tecnología disponible.</p>
+                </div>
 
-            <h2 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">Accesos Directos a Módulos</h2>
-            
-            <div class="grid-accesos">
-                <a href="medicos.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">🩺</div>
-                    <h3>Médicos</h3>
-                    <p>Especialistas, cédulas y horarios.</p>
-                </a>
-                <a href="personal.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">👤</div>
-                    <h3>Personal</h3>
-                    <p>Cargos, turnos y áreas asignadas.</p>
-                </a>
-                <a href="facturas.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">💳</div>
-                    <h3>Facturas</h3>
-                    <p>Conceptos, montos y estados fiscales.</p>
-                </a>
-                <a href="recetas.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">📝</div>
-                    <h3>Recetas</h3>
-                    <p>Medicamentos, dosis e instrucciones.</p>
-                </a>
-                <a href="pacientes.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">🏥</div>
-                    <h3>Pacientes</h3>
-                    <p>Expedientes, tipos de sangre y datos.</p>
-                </a>
-                <a href="medicamentos.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">💊</div>
-                    <h3>Medicamentos</h3>
-                    <p>Inventario de farmacia, stock y vencimientos.</p>
-                </a>
-                <a href="consultorios.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">🚪</div>
-                    <h3>Consultorios</h3>
-                    <p>Asignación de salas, pisos y médicos.</p>
-                </a>
-                <a href="citas.html" class="tarjeta-acceso">
-                    <div class="icono-modulo">📅</div>
-                    <h3>Citas</h3>
-                    <p>Agenda médica y estados de consulta.</p>
-                </a>
+                <div class="seccion-especialidades">
+                    <h3>Nuestras Especialidades</h3>
+                    <p>Contamos con doctores preparados en diferentes áreas para atenderte en cualquier momento:</p>
+                    <div class="contenedor-tags">
+                        <span class="tag-especialidad">Oftalmólogo</span>
+                        <span class="tag-especialidad">Urólogo</span>
+                        <span class="tag-especialidad">Cardiólogo</span>
+                        <span class="tag-especialidad">Dermatólogo</span>
+                        <span class="tag-especialidad">Ginecólogo</span>
+                        <span class="tag-especialidad">Hematólogo</span>
+                        <span class="tag-especialidad">Cirujano</span>
+                        <span class="tag-especialidad">Traumatólogo</span>
+                        <span class="tag-especialidad">Internista</span>
+                        <span class="tag-especialidad">Dentista</span>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
