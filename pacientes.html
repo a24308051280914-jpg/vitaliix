@@ -15,24 +15,25 @@
         nav a:hover { background-color: #34495e; color: white; padding-left: 20px; }
         .activo { background-color: #0056b3; color: white; }
         
-        main { flex: 1; padding: 30px; margin-left: 260px; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center; gap: 25px; }
-        .tarjeta-formulario { background: white; padding: 30px 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #0056b3; width: 100%; max-width: 700px; box-sizing: border-box; }
-        .tarjeta-formulario h2 { color: #2c3e50; margin-top: 0; font-size: 24px; margin-bottom: 5px; }
-        .tarjeta-formulario p { color: #64748b; font-size: 13px; margin-bottom: 25px; }
+        main { flex: 1; padding: 30px; margin-left: 260px; margin-bottom: 60px; display: grid; grid-template-columns: 1fr 380px; gap: 30px; align-items: start; }
         
-        .grupo-formulario { margin-bottom: 15px; }
-        .grupo-formulario label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: #4a5568; }
-        .grupo-formulario input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; box-sizing: border-box; background-color: #f8fafc; }
-        .grupo-formulario input:focus { border-color: #0056b3; outline: none; background-color: #fff; }
-        
-        .btn-guardar { width: 100%; background: #0056b3; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; margin-top: 10px; transition: background 0.2s; }
-        .btn-guardar:hover { background: #004494; }
-
-        .contenedor-tabla { background: white; padding: 25px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #2c3e50; width: 100%; max-width: 900px; box-sizing: border-box; }
+        .contenedor-tabla { background: white; padding: 25px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #2c3e50; box-sizing: border-box; width: 100%; }
         .contenedor-tabla h3 { color: #2c3e50; margin-top: 0; font-size: 18px; margin-bottom: 15px; }
         .tabla-registros { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
         .tabla-registros th { background-color: #f1f5f9; color: #4a5568; padding: 12px 10px; font-weight: 600; border-bottom: 2px solid #cbd5e1; }
         .tabla-registros td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+
+        .tarjeta-formulario { background: white; padding: 25px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid #0056b3; box-sizing: border-box; width: 100%; }
+        .tarjeta-formulario h2 { color: #2c3e50; margin-top: 0; font-size: 22px; margin-bottom: 5px; }
+        .tarjeta-formulario p { color: #64748b; font-size: 13px; margin-bottom: 20px; }
+        
+        .grupo-formulario { margin-bottom: 12px; }
+        .grupo-formulario label { display: block; margin-bottom: 5px; font-size: 13px; font-weight: 600; color: #4a5568; }
+        .grupo-formulario input { width: 100%; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; box-sizing: border-box; background-color: #f8fafc; }
+        .grupo-formulario input:focus { border-color: #0056b3; outline: none; background-color: #fff; }
+        
+        .btn-guardar { width: 100%; background: #0056b3; color: white; border: none; padding: 11px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; margin-top: 10px; transition: background 0.2s; }
+        .btn-guardar:hover { background: #004494; }
 
         footer { background: #1a252f; color: white; padding: 15px; text-align: center; position: fixed; bottom: 0; left: 0; right: 0; height: 30px; z-index: 1000; display: flex; justify-content: space-around; align-items: center; font-size: 13px; }
         footer p { margin: 0; }
@@ -54,22 +55,6 @@
             <a href="citas.html">Citas</a>
         </nav>
         <main>
-            <div class="tarjeta-formulario">
-                <h2>Ingreso de Pacientes</h2>
-                <p>Apertura de nuevo expediente clínico.</p>
-                <form onsubmit="return false;">
-                    <div class="grupo-formulario"><label>ID Paciente</label><input type="text" placeholder="Ej: PAC-01"></div>
-                    <div class="grupo-formulario"><label>Nombre Completo</label><input type="text" placeholder="Nombre completo"></div>
-                    <div class="grupo-formulario"><label>Fecha de Nacimiento</label><input type="date"></div>
-                    <div class="grupo-formulario"><label>Sexo</label><input type="text" placeholder="Ej: Masculino / Femenino"></div>
-                    <div class="grupo-formulario"><label>Domicilio</label><input type="text" placeholder="Dirección completa"></div>
-                    <div class="grupo-formulario"><label>Teléfono</label><input type="text" placeholder="Ej: 656-000-0000"></div>
-                    <div class="grupo-formulario"><label>Tipo de Sangre</label><input type="text" placeholder="Ej: O+, A-"></div>
-                    <div class="grupo-formulario"><label>CURP</label><input type="text" placeholder="18 caracteres"></div>
-                    <button class="btn-guardar">Guardar Paciente</button>
-                </form>
-            </div>
-
             <div class="contenedor-tabla">
                 <h3>Expedientes de Pacientes</h3>
                 <table class="tabla-registros">
@@ -94,6 +79,22 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="tarjeta-formulario">
+                <h2>Ingreso de Pacientes</h2>
+                <p>Apertura de nuevo expediente clínico.</p>
+                <form onsubmit="return false;">
+                    <div class="grupo-formulario"><label>ID Paciente</label><input type="text" placeholder="Ej: PAC-01"></div>
+                    <div class="grupo-formulario"><label>Nombre Completo</label><input type="text" placeholder="Nombre completo"></div>
+                    <div class="grupo-formulario"><label>Fecha de Nacimiento</label><input type="date"></div>
+                    <div class="grupo-formulario"><label>Sexo</label><input type="text" placeholder="Ej: Masculino"></div>
+                    <div class="grupo-formulario"><label>Domicilio</label><input type="text" placeholder="Dirección completa"></div>
+                    <div class="grupo-formulario"><label>Teléfono</label><input type="text" placeholder="Ej: 656-000-0000"></div>
+                    <div class="grupo-formulario"><label>Tipo de Sangre</label><input type="text" placeholder="Ej: O+"></div>
+                    <div class="grupo-formulario"><label>CURP</label><input type="text" placeholder="18 caracteres"></div>
+                    <button class="btn-guardar">Guardar Paciente</button>
+                </form>
             </div>
         </main>
     </div>
